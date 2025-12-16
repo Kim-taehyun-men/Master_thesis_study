@@ -28,11 +28,6 @@ fastdds_discvoery_hb_N #hb 잘 끝났나 확인가능판 파일
 fastdds_udp_tx_hb_data_N # DDS 단에서 실제로 전송한 Discovery 데이터 기록 파일
 mac_aqm_tid0_ac2_wlx94a67e6e4790@70:5d:cc:38:d7:42_2025_N # Software mac Queue의 전송, 드랍, 처리한 패킷값들을 0.1초기 기록한 파일
 Time_N : Discovery 시작과 끝나는 시간을 기록한 파일
-
-sudo ./install
-IP No.: 1
-wlan iface0 : Interface Name
-vlan No.: 1
 ```
 
 ## Setup and Execution Laptop_1(Subscriber_1)
@@ -42,15 +37,20 @@ sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
-sudo ./install
-IP No.: X(Number)
-wlan iface0 : Interface Name_1 (wlan)
-wlan iface1 : Interface Name_2 (vlan_1)
-wlan iface2 : Interface Name_3 (vlan_2)
-ethernet iface0: veth0
-ethernet iface1: veth1
-vlan No. (1): 1
-vlan No. (2): 2
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_10 subscriber_10
+~
+ros2 run my_topic_example_12 subscriber_12
+~
+ros2 run my_topic_example_14 subscriber_14
+
+# IF you want to build using this command
+cd ~ colcon build
+source insatll
 ```
 
 ## Setup and Execution Laptop_2(Subscriber_2)
@@ -60,15 +60,20 @@ sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
-sudo ./install
-IP No.: X(Number)
-wlan iface0 : Interface Name_1 (wlan)
-wlan iface1 : Interface Name_2 (vlan_1)
-wlan iface2 : Interface Name_3 (vlan_2)
-ethernet iface0: veth0
-ethernet iface1: veth1
-vlan No. (1): 1
-vlan No. (2): 2
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_10 subscriber_10
+~
+ros2 run my_topic_example_12 subscriber_12
+~
+ros2 run my_topic_example_14 subscriber_14
+
+# IF you want to build using this command
+cd ~ colcon build
+source insatll
 ```
 
 ## Setup and Execution Laptop_3(Subscriber_3)
@@ -78,19 +83,20 @@ sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
-sudo ./install
-IP No.: X(Number)
-wlan iface0 : Interface Name_1 (wlan)
-wlan iface1 : Interface Name_2 (vlan_1)
-wlan iface2 : Interface Name_3 (vlan_2)
-ethernet iface0: veth0
-ethernet iface1: veth1
-vlan No. (1): 1
-vlan No. (2): 2
-```
-
+# Execution (Input command anther terminal, 10/12/14)
 ros2 run my_topic_example subscriber
-
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_10 subscriber_10
+~
+ros2 run my_topic_example_12 subscriber_12
+~
 ros2 run my_topic_example_14 subscriber_14
 
-## Result_Data
+# IF you want to build using this command
+cd ~ colcon build
+source insatll
+```
+
+## Result
