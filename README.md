@@ -75,3 +75,5 @@ ethernet iface1: veth1
 vlan No. (1): 1
 vlan No. (2): 2
 ```
+
+ros2 run my_topic_example subscriber
