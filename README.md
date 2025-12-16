@@ -6,7 +6,7 @@ Fast-DDS Version: 2.6.9
 <br />
 Network (AP) environment: 2.4 GHz
 <br />
-When the number of nodes is 10, 12, and 14, respectively, the Publisher execution period is set to 1 s, 2 s, and 4 s.
+When the number of nodes is 10, 12, and 14, respectively, the Publisher execution period is set to 1 s, 2 s, and 8 s.
 <br />
 
 ## Setup and Execution Desktop(Publisher)
@@ -77,3 +77,7 @@ vlan No. (2): 2
 ```
 
 ros2 run my_topic_example subscriber
+
+ros2 run my_topic_example_14 subscriber_14
+
+## Result_Data
