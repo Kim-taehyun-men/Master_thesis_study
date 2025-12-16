@@ -19,7 +19,7 @@ sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, cha
 # Execution
 cd /tmp
 ./orchestrate_round.sh           # Execution study
-
+ 가공하는 부분의 파일도 기록하자 태현아
 
 # Execution file explanation
 orchestrate_rounds.sh # 전체 실행 파일, 총 진행할 라운드, 라운드간 지속시간(max 시간), 다음 라운드 간의 시간 설정 // Discovery가 끝났다고 인지하면 자동으로 ros2 노드들 종료시킴.
