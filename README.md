@@ -1,9 +1,13 @@
 # Master_thesis_study
 
 Ubuntu   Version: 22.04
+<br />
 Fast-DDS Version: 2.6.9
+<br />
 Network (AP) environment: 2.4 GHz
+<br />
 When the number of nodes is 10, 12, and 14, respectively, the Publisher execution period is set to 1 s, 2 s, and 4 s.
+<br />
 
 ## Setup and Execution Desktop(Publisher)
 ```bash
