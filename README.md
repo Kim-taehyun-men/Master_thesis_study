@@ -17,6 +17,9 @@ sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, cha
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
 # Execution
+cd /tmp
+./orchestrate_round.sh           # Execution study
+
 orchestrate_rounds.sh # 전체 실행 파일, 총 진행할 라운드, 라운드간 지속시간(max 시간), 다음 라운드 간의 시간 설정 // Discovery가 끝났다고 인지하면 자동으로 ros2 노드들 종료시킴.
 run_all.sh # 노드 몇개 실행할 꺼인지 설정하는 파일
 watch_2x28.sh # 노드 시작 및 종료 시간 기록 파일
