@@ -7,9 +7,9 @@ Ehternet port 1 of an OVS should be connected its a host device.
 ARP table of all hosts should be provided in advance (there is no need to be precise).
 If device id of the OVS is "of:000...00x", IP of host connected the OVS should be set "10.0.0.x".
 
-## Setup Desktop(Publisher)
+## Setup and Execution Desktop(Publisher)
 ```bash
-# OS buffer size check and change
+# OS buffer size setuo
 sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
@@ -20,9 +20,9 @@ wlan iface0 : Interface Name
 vlan No.: 1
 ```
 
-## Setup Laptop_1(Subscriber_1)
+## Setup and Execution Laptop_1(Subscriber_1)
 ```bash
-# OS buffer size check and change
+# OS buffer size setuo
 sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
@@ -38,9 +38,9 @@ vlan No. (1): 1
 vlan No. (2): 2
 ```
 
-## Setup Laptop_2(Subscriber_2)
+## Setup and Execution Laptop_2(Subscriber_2)
 ```bash
-# OS buffer size check and change
+# OS buffer size setuo
 sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
@@ -56,9 +56,9 @@ vlan No. (1): 1
 vlan No. (2): 2
 ```
 
-## Setup Laptop_3(Subscriber_3)
+## Setup and Execution Laptop_3(Subscriber_3)
 ```bash
-# OS buffer size check and change
+# OS buffer size setuo
 sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
 sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
 sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
