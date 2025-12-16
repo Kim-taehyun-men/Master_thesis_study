@@ -42,11 +42,11 @@ ros2 run my_topic_example subscriber
 ros2 run my_topic_example_1 subscriber_1
 ros2 run my_topic_example_2 subscriber_2
 ~
-ros2 run my_topic_example_10 subscriber_10
+ros2 run my_topic_example_9 subscriber_9
 ~
-ros2 run my_topic_example_12 subscriber_12
+ros2 run my_topic_example_11 subscriber_11
 ~
-ros2 run my_topic_example_14 subscriber_14
+ros2 run my_topic_example_13 subscriber_13
 
 # IF you want to build using this command
 cd ros2_humble/src/eProsima/
@@ -66,11 +66,11 @@ ros2 run my_topic_example subscriber
 ros2 run my_topic_example_1 subscriber_1
 ros2 run my_topic_example_2 subscriber_2
 ~
-ros2 run my_topic_example_10 subscriber_10
+ros2 run my_topic_example_9 subscriber_9
 ~
-ros2 run my_topic_example_12 subscriber_12
+ros2 run my_topic_example_11 subscriber_11
 ~
-ros2 run my_topic_example_14 subscriber_14
+ros2 run my_topic_example_13 subscriber_13
 
 # IF you want to build using this command
 cd ros2_humble/src/eProsima/
@@ -90,11 +90,11 @@ ros2 run my_topic_example subscriber
 ros2 run my_topic_example_1 subscriber_1
 ros2 run my_topic_example_2 subscriber_2
 ~
-ros2 run my_topic_example_10 subscriber_10
+ros2 run my_topic_example_9 subscriber_9
 ~
-ros2 run my_topic_example_12 subscriber_12
+ros2 run my_topic_example_11 subscriber_11
 ~
-ros2 run my_topic_example_14 subscriber_14
+ros2 run my_topic_example_13 subscriber_13
 
 # IF you want to build using this command
 cd ros2_ws/src/Fast-DDS/
