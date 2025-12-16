@@ -49,8 +49,9 @@ ros2 run my_topic_example_12 subscriber_12
 ros2 run my_topic_example_14 subscriber_14
 
 # IF you want to build using this command
-cd ~ colcon build
-source insatll
+cd ros2_humble/src/eProsima/
+colcon build
+source insatll/setup.bash
 ```
 
 ## Setup and Execution Laptop_2(Subscriber_2)
@@ -72,8 +73,9 @@ ros2 run my_topic_example_12 subscriber_12
 ros2 run my_topic_example_14 subscriber_14
 
 # IF you want to build using this command
-cd ~ colcon build
-source insatll
+cd ros2_humble/src/eProsima/
+colcon build
+source insatll/setup.bash
 ```
 
 ## Setup and Execution Laptop_3(Subscriber_3)
@@ -95,8 +97,9 @@ ros2 run my_topic_example_12 subscriber_12
 ros2 run my_topic_example_14 subscriber_14
 
 # IF you want to build using this command
-cd ~ colcon build
-source insatll
+cd ros2_ws/src/Fast-DDS/
+colcon build
+source insatll/setup.bash
 ```
 
 ## Result
