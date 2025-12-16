@@ -48,7 +48,7 @@ ros2 run my_topic_example_11 subscriber_11
 ~
 ros2 run my_topic_example_13 subscriber_13
 
-# IF you want to build using this command
+# If you want to build for DDS, use this command
 cd ros2_humble/src/eProsima/
 colcon build
 source insatll/setup.bash
@@ -72,7 +72,7 @@ ros2 run my_topic_example_11 subscriber_11
 ~
 ros2 run my_topic_example_13 subscriber_13
 
-# IF you want to build using this command
+# If you want to build for DDS, use this command
 cd ros2_humble/src/eProsima/
 colcon build
 source insatll/setup.bash
@@ -96,7 +96,7 @@ ros2 run my_topic_example_11 subscriber_11
 ~
 ros2 run my_topic_example_13 subscriber_13
 
-# IF you want to build using this command
+# If you want to build for DDS, use this command
 cd ros2_ws/src/Fast-DDS/
 colcon build
 source insatll/setup.bash
