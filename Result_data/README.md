@@ -1,2 +1,2 @@
 # Result_data Processing
-<img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/828fdc6d-04ee-41be-b2d2-1268b503ff39" />
+<img width="366" height="571" alt="Image" src="https://github.com/user-attachments/assets/c284011d-0706-487a-97dc-cfb76fd1847f" />
