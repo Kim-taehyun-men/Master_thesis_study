@@ -117,50 +117,34 @@ source insatll/setup.bash
 
 ## Setup and Execution Desktop(Publisher)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
+# eth ip and loss rate setup
+sudo ip addr add 192.168.10.1/24 dev eth1(interface name)
 
-# Execution (Input command anther terminal, 10/12/14)
-ros2 run my_topic_example subscriber
-ros2 run my_topic_example_1 subscriber_1
-ros2 run my_topic_example_2 subscriber_2
-~
-ros2 run my_topic_example_9 subscriber_9
-~
-ros2 run my_topic_example_11 subscriber_11
-~
-ros2 run my_topic_example_13 subscriber_13
+sudo tc qdisc add dev eth1 root netem loss 5
+sudo tc qdisc change dev eth1 root netem loss 5
 
-# If you want to build for DDS, use this command
-cd ros2_humble/src/eProsima/
-colcon build
-source insatll/setup.bash
+# Execution
+./ros2_hb_cycle.sh
+
+# Data processing
+python3 -m venv .venv
+source .venv/bin/activate
+pip install "numpy<2" pandas matplotlib
+
+python3 end_round_cdf.py --prefix "./fastdds_discovery_hb_" --start 1 --end 1000 --ext ".csv" --max-threshold 15 --out-dir "./"     # 1, 1000 의 변수는 범위로 ros2_hb_cycls.sh에서 설정한 반복 횟수만큼 변동하면됨
 ```
 
 ## Setup and Execution Laptop_4(Subscriber_4)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
+# eth ip and loss rate setup
+sudo ip addr add 192.168.10.2/24 dev eth1(interface name)
 
-# Execution (Input command anther terminal, 10/12/14)
+sudo tc qdisc add dev eth1 root netem loss 5
+sudo tc qdisc change dev eth1 root netem loss 5
+
+# Execution
 ros2 run my_topic_example subscriber
-ros2 run my_topic_example_1 subscriber_1
-ros2 run my_topic_example_2 subscriber_2
-~
-ros2 run my_topic_example_9 subscriber_9
-~
-ros2 run my_topic_example_11 subscriber_11
-~
-ros2 run my_topic_example_13 subscriber_13
 
-# If you want to build for DDS, use this command
-cd ros2_ws/src/Fast-DDS/
-colcon build
-source insatll/setup.bash
 ```
 ## Result
 <img width="989" height="589" alt="Image" src="https://github.com/user-attachments/assets/15463128-d6c9-42d7-b910-e9d504e0ff78" />
