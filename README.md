@@ -12,27 +12,27 @@ When the number of nodes is 10, 12, and 14, respectively, the Publisher executio
 ## Setup and Execution Desktop(Publisher)
 ```bash
 # OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
+sysctl net.core.rmem_default net.core.rmem_default      # check rmem_buffer_size
+sudo sysctl -w net.core.rmem_default=268435456          # if not set buffer size, change buffer size
+sudo sysctl -w net.core.rmem_max=268435456              # if not set buffer size, change buffer size
 
 # Execution
 cd /tmp
-./orchestrate_round.sh           # Execution study
- 가공하는 부분의 파일도 기록하자 태현아
+./orchestrate_round.sh                                   # Execution study
+python3 summarize_drops_and_time.py                      # Data processing
 
 # Execution file explanation
-orchestrate_rounds.sh # 전체 실행 파일, 총 진행할 라운드, 라운드간 지속시간(max 시간), 다음 라운드 간의 시간 설정 // Discovery가 끝났다고 인지하면 자동으로 ros2 노드들 종료시킴.
-run_all.sh # 노드 몇개 실행할 꺼인지 설정하는 파일
-watch_2x28.sh # 노드 시작 및 종료 시간 기록 파일
-mac_aqm_to_csv.sh # Software mac Queue 측정 파일(단위 0.1s)
-convery_ts.py # watch_2x28.sh 에서 시간 변환을 위해 필요한 파일
+orchestrate_rounds.sh                                    # 전체 실행 파일, 총 진행할 라운드, 라운드간 지속시간(max 시간), 다음 라운드 간의 시간 설정 // Discovery가 끝났다고 인지하면 자동으로 ros2 노드들 종료시킴.
+run_all.sh                                               # 몇개의 노드를 실행할 꺼인지 설정하는 파일
+watch_2x28.sh                                            # 노드 시작 및 종료 시간 기록 파일
+mac_aqm_to_csv.sh                                        # Software mac Queue 측정 파일(단위 0.1s)
+convery_ts.py                                            # watch_2x28.sh 에서 시간 변환을 위해 필요한 파일
 
 # Result file explanation
-fastdds_discvoery_hb_N #hb 잘 끝났나 확인가능판 파일
-fastdds_udp_tx_hb_data_N # DDS 단에서 실제로 전송한 Discovery 데이터 기록 파일
+fastdds_discvoery_hb_N                                    # hb 잘 끝났나 확인가능판 파일
+fastdds_udp_tx_hb_data_N                                  # DDS 단에서 실제로 전송한 Discovery 데이터 기록 파일
 mac_aqm_tid0_ac2_wlx94a67e6e4790@70:5d:cc:38:d7:42_2025_N # Software mac Queue의 전송, 드랍, 처리한 패킷값들을 0.1초기 기록한 파일
-Time_N : Discovery 시작과 끝나는 시간을 기록한 파일
+Time_N                                                    # Discovery 시작과 끝나는 시간을 기록한 파일
 ```
 
 ## Setup and Execution Laptop_1(Subscriber_1)
