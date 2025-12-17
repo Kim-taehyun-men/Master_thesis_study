@@ -1,4 +1,4 @@
-# Master_thesis_study
+# Master_thesis_study_1
 
 Ubuntu   Version: 22.04
 <br />
@@ -114,5 +114,53 @@ source insatll/setup.bash
 <img width="989" height="439" alt="Image" src="https://github.com/user-attachments/assets/053f78aa-6518-49a0-8106-0662b4268965" />
 <img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/828fdc6d-04ee-41be-b2d2-1268b503ff39" />
 
-# Master_thesis_study
-sdwa
+# Master_thesis_study_2
+
+## Setup and Execution Desktop(Publisher)
+```bash
+# OS buffer size setup
+sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
+sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
+sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
+
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_9 subscriber_9
+~
+ros2 run my_topic_example_11 subscriber_11
+~
+ros2 run my_topic_example_13 subscriber_13
+
+# If you want to build for DDS, use this command
+cd ros2_humble/src/eProsima/
+colcon build
+source insatll/setup.bash
+```
+
+## Setup and Execution Laptop_4(Subscriber_4)
+```bash
+# OS buffer size setup
+sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
+sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
+sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
+
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_9 subscriber_9
+~
+ros2 run my_topic_example_11 subscriber_11
+~
+ros2 run my_topic_example_13 subscriber_13
+
+# If you want to build for DDS, use this command
+cd ros2_ws/src/Fast-DDS/
+colcon build
+source insatll/setup.bash
+```
+
