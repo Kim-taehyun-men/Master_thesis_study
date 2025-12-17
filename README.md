@@ -120,8 +120,8 @@ source insatll/setup.bash
 # eth ip and loss rate setup
 sudo ip addr add 192.168.10.1/24 dev eth1(interface name)
 
-sudo tc qdisc add dev eth1 root netem loss 5
-sudo tc qdisc change dev eth1 root netem loss 5
+sudo tc qdisc add dev eth1 root netem loss 5     (5, 10, 20, 30)
+sudo tc qdisc change dev eth1 root netem loss 5  (5, 10, 20, 30)
 
 # Execution
 ./ros2_hb_cycle.sh
@@ -139,8 +139,8 @@ python3 end_round_cdf.py --prefix "./fastdds_discovery_hb_" --start 1 --end 1000
 # eth ip and loss rate setup
 sudo ip addr add 192.168.10.2/24 dev eth1(interface name)
 
-sudo tc qdisc add dev eth1 root netem loss 5
-sudo tc qdisc change dev eth1 root netem loss 5
+sudo tc qdisc add dev eth1 root netem loss 5     (5, 10, 20, 30)
+sudo tc qdisc change dev eth1 root netem loss 5  (5, 10, 20, 30)
 
 # Execution
 ros2 run my_topic_example subscriber
