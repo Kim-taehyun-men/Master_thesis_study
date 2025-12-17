@@ -18,7 +18,7 @@ sudo sysctl -w net.core.rmem_max=268435456              # if not set buffer size
 
 # Execution
 cd /tmp
-./orchestrate_round.sh                                   # Execution study
+./orchestrate_round.sh                                   # Execution study (실행전 sudo 권한을 받아둬야함, sudo ifconfig 명령어 후 진행하면 됨)
 python3 summarize_drops_and_time.py                      # Data processing
 
 # Execution file explanation
