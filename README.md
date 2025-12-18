@@ -11,10 +11,6 @@ When the number of nodes is 10, 12, and 14, respectively, the Publisher executio
 
 ## Setup and Execution Desktop(Publisher)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default      # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456          # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456              # if not set buffer size, change buffer size
 
 # Execution
 cd /tmp
@@ -37,10 +33,6 @@ Time_N                                                    # Discovery 시작과 
 
 ## Setup and Execution Laptop_1(Subscriber_1)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
 # Execution (Input command anther terminal, 10/12/14)
 ros2 run my_topic_example subscriber
@@ -61,10 +53,6 @@ source insatll/setup.bash
 
 ## Setup and Execution Laptop_2(Subscriber_2)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
 # Execution (Input command anther terminal, 10/12/14)
 ros2 run my_topic_example subscriber
@@ -85,10 +73,6 @@ source insatll/setup.bash
 
 ## Setup and Execution Laptop_3(Subscriber_3)
 ```bash
-# OS buffer size setup
-sysctl net.core.rmem_default net.core.rmem_default # check rmem_buffer_size
-sudo sysctl -w net.core.rmem_default=268435456     # if not set buffer size, change buffer size
-sudo sysctl -w net.core.rmem_max=268435456         # if not set buffer size, change buffer size
 
 # Execution (Input command anther terminal, 10/12/14)
 ros2 run my_topic_example subscriber
@@ -108,7 +92,6 @@ source insatll/setup.bash
 ```
 
 ## Result
-<img width="1389" height="409" alt="Image" src="https://github.com/user-attachments/assets/571fa617-5fbc-4b57-a0ad-26021c073bf7" />
 <img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/67cacb2d-7e94-4551-96fd-365ebec12c80" />
 <img width="989" height="439" alt="Image" src="https://github.com/user-attachments/assets/053f78aa-6518-49a0-8106-0662b4268965" />
 <img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/828fdc6d-04ee-41be-b2d2-1268b503ff39" />
@@ -148,3 +131,90 @@ ros2 run my_topic_example subscriber
 ```
 ## Result
 <img width="989" height="589" alt="Image" src="https://github.com/user-attachments/assets/15463128-d6c9-42d7-b910-e9d504e0ff78" />
+
+## Result
+<img width="1389" height="409" alt="Image" src="https://github.com/user-attachments/assets/571fa617-5fbc-4b57-a0ad-26021c073bf7" />
+<img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/67cacb2d-7e94-4551-96fd-365ebec12c80" />
+<img width="989" height="439" alt="Image" src="https://github.com/user-attachments/assets/053f78aa-6518-49a0-8106-0662b4268965" />
+<img width="989" height="440" alt="Image" src="https://github.com/user-attachments/assets/828fdc6d-04ee-41be-b2d2-1268b503ff39" />
+
+# Master_thesis_study_3
+
+## Setup and Execution Desktop(Publisher)
+```bash
+# Execution
+# Data collection
+cd /tmp
+# 파일 실행 시 이름 설정 잘해야함.(다음 실행을 위해)
+./SH_all.sh                                   # Execution study (실행전 sudo 권한을 받아둬야함, sudo ifconfig 명령어 후 진행하면 됨)
+
+# Input file name 설정 잘하기, out put file name 설정 잘하기. (각 회차들 데이터들의 평균값 가지고 오는 부분)
+python3 show_elbow_illine.py   --glob "mac_aqm_tid0_ac2_wlx94a67e6e4790@70:5d:cc:38:d7:42_16_*_H4_P0(NP).csv"   --neighbors 1   --out-csv "service_and_backlog_window_avg_16.csv"
+
+# 각 부분들의 데이터 중앙값 출력
+python3 summarize.py
+
+```
+## Subscriber들의 노드들이 총 13개, 14개, 15개, 16개일 때의 전송량을 측정한거임.
+EX) Subscriber_1, Subscriber_2, Subscriber_3들에거 각각 4,4,5 개의 노드 실행. (총 13개)
+## Setup and Execution Laptop_1(Subscriber_1)
+```bash
+
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_9 subscriber_9
+~
+ros2 run my_topic_example_11 subscriber_11
+~
+ros2 run my_topic_example_13 subscriber_13
+
+# If you want to build for DDS, use this command
+cd ros2_humble/src/eProsima/
+colcon build
+source insatll/setup.bash
+```
+
+## Setup and Execution Laptop_2(Subscriber_2)
+```bash
+
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_9 subscriber_9
+~
+ros2 run my_topic_example_11 subscriber_11
+~
+ros2 run my_topic_example_13 subscriber_13
+
+# If you want to build for DDS, use this command
+cd ros2_humble/src/eProsima/
+colcon build
+source insatll/setup.bash
+```
+
+## Setup and Execution Laptop_3(Subscriber_3)
+```bash
+
+# Execution (Input command anther terminal, 10/12/14)
+ros2 run my_topic_example subscriber
+ros2 run my_topic_example_1 subscriber_1
+ros2 run my_topic_example_2 subscriber_2
+~
+ros2 run my_topic_example_9 subscriber_9
+~
+ros2 run my_topic_example_11 subscriber_11
+~
+ros2 run my_topic_example_13 subscriber_13
+
+# If you want to build for DDS, use this command
+cd ros2_ws/src/Fast-DDS/
+colcon build
+source insatll/setup.bash
+```
+## Result
+<img width="1389" height="409" alt="Image" src="https://github.com/user-attachments/assets/571fa617-5fbc-4b57-a0ad-26021c073bf7" />
