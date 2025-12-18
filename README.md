@@ -5,20 +5,19 @@
 의의: Publisher에서 각 지표들이 얼만큼 변경되는지 확인하는 실험(Normal Vs SPREAD Algorithms)
 1. Subscriber_1, _2, _3들을 각 노드(10, 12, 14)만큼 실행 시킨다.
 2. Publisher들을 명령어를 실행시켜 데이터를 확인한다.
-3. colab에 들어가 데이터를 넣고, 결과값을 확인한다.
+3. colab에 들어가 데이터를 넣고, 결과값(그래프)을 확인한다.
    
 ## Master_thesis_study_2
 의의: Discovery에서 1대1일 때 전송률에 따른 재전송 매커니즘 성공하는 라운드 확인하기 위한 실험(유선에서 진행되고 있음)
 1. Publisher와 Subscriber_4를 유선으로 연결하고 eth(이더포트)의 ip와 손실률을 설정한다.(ping 192.168.0.1 or 192.168.0.2로 연결 상태 확인하기)
 2. Subscriber_4를 먼저 실행시키고, Publisher에서 자동화 프로그램을 설정하도 실행시킨다.
-3. colab에 데이터를 넣고 결과 확인한다다.
+3. colab에 데이터를 넣고 결과(그래프) 확인한다.
    
 ## Master_thesis_study_3
-의의: Publisher에서 각 지표들이 얼만큼 변경되는지 확인하는 실험(Normal Vs SPREAD Algorithms)
-1. Subscriber_1, _2, _3들을 각 노드(10, 12, 14)만큼 실행 시킨다.
-2. Publisher들을 명령어를 실행시켜 데이터를 확인한다.
-3. colab에 들어가 데이터를 넣고, 결과값을 확인한다.
-   
+의의: Publisher에서 Software TxQ에서 Drop이 발생할 때(간당간당하게 발생할 때)의 상황에서 Publisher의 Software TxQ의 처리량을 확인하기 위한 실험(Subscriber 노드 수 약 13~16 설정)
+1. Subscriber_1, _2, _3을 통해, 네트워크에 있는 총 노드의 수가 13~16개가 되도록 실행 시킨다.
+2. 자동화 코드를 통해 데이터를 수집한다.
+3. 파이썬 코드를 통해 데이터 가공화를 진행한다.c4. colab에 들어가 데이터를 넣고, 결과값(그래프)을 확인한다.
 # Master_thesis_study_1
 
 Ubuntu   Version: 22.04
