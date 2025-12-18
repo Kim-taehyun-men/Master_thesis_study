@@ -1,3 +1,23 @@
+# Master_thesis_study
+모든 프로그램의 유동적으로 변경 가능한 변수가 있으니, 잘 확인하고 진행하면 좋을껏.
+
+## Master_thesis_study_1
+의의: Publisher에서 각 지표들이 얼만큼 변경되는지 확인하는 실험(Normal Vs SPREAD Algorithms)
+1. Subscriber_1, _2, _3들을 각 노드(10, 12, 14)만큼 실행 시킨다.
+2. Publisher들을 명령어를 실행시켜 데이터를 확인한다.
+3. colab에 들어가 데이터를 넣고, 결과값을 확인한다.
+   
+## Master_thesis_study_2
+의의: Discovery에서 1대1일 때 전송률에 따른 재전송 매커니즘 성공하는 라운드 확인하기 위한 실험(유선에서 진행되고 있음)
+1. Publisher와 Subscriber_4를 유선으로 연결하고 eth(이더포트)의 ip와 손실률을 설정한다.(ping 192.168.0.1 or 192.168.0.2로 연결 상태 확인하기)
+2. Subscriber_4를 먼저 실행시키고, Publisher에서 자동화 프로그램을 설정하도 실행시킨다. 확인한다.
+   
+## Master_thesis_study_3
+의의: Publisher에서 각 지표들이 얼만큼 변경되는지 확인하는 실험(Normal Vs SPREAD Algorithms)
+1. Subscriber_1, _2, _3들을 각 노드(10, 12, 14)만큼 실행 시킨다.
+2. Publisher들을 명령어를 실행시켜 데이터를 확인한다.
+3. colab에 들어가 데이터를 넣고, 결과값을 확인한다.
+   
 # Master_thesis_study_1
 
 Ubuntu   Version: 22.04
@@ -8,6 +28,8 @@ Network (AP) environment: 2.4 GHz
 <br />
 When the number of nodes is 10, 12, and 14, respectively, the Publisher execution period is set to 1 s, 4 s, and 8 s.
 <br />
+
+
 
 ## Setup and Execution Desktop(Publisher)
 ```bash
