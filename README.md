@@ -10,7 +10,8 @@
 ## Master_thesis_study_2
 의의: Discovery에서 1대1일 때 전송률에 따른 재전송 매커니즘 성공하는 라운드 확인하기 위한 실험(유선에서 진행되고 있음)
 1. Publisher와 Subscriber_4를 유선으로 연결하고 eth(이더포트)의 ip와 손실률을 설정한다.(ping 192.168.0.1 or 192.168.0.2로 연결 상태 확인하기)
-2. Subscriber_4를 먼저 실행시키고, Publisher에서 자동화 프로그램을 설정하도 실행시킨다. 확인한다.
+2. Subscriber_4를 먼저 실행시키고, Publisher에서 자동화 프로그램을 설정하도 실행시킨다.
+3. colab에 데이터를 넣고 결과 확인한다다.
    
 ## Master_thesis_study_3
 의의: Publisher에서 각 지표들이 얼만큼 변경되는지 확인하는 실험(Normal Vs SPREAD Algorithms)
